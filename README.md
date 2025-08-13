@@ -14,6 +14,13 @@ Built as a personal project to demonstrate skills in Python, NLP, and web app de
 
 ---
 
+## Live Demo  
+[![Run on Replit](https://replit.com/badge/github/Karrington53/Resume-Analyzer)](https://replit.com/@Karrington53/Resume-Analyzer)  
+
+Click the button above to open and run the project on Replit.  
+
+---
+
 ## Tech Stack
 - **Language**: Python 3
 - **Framework**: Streamlit
