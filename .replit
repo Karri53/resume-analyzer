@@ -3,6 +3,7 @@ modules = ["python-3.11"]
 
 [nix]
 channel = "stable-25_05"
+packages = ["freetype", "gumbo", "harfbuzz", "jbig2dec", "libjpeg_turbo", "mupdf", "openjpeg", "swig", "xcbuild"]
 
 [unitTest]
 language = "python3"
@@ -13,3 +14,19 @@ requiredFiles = [".replit", "replit.nix"]
 [deployment]
 run = ["python3", "main.py"]
 deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8501
+externalPort = 80
+
+[workflows]
+runButton = "Run Resume Analyzer"
+
+[[workflows.workflow]]
+name = "Run Resume Analyzer"
+author = 36527669
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "streamlit run resume-analyzer/main.py --server.address=0.0.0.0 --server.port=8501"
